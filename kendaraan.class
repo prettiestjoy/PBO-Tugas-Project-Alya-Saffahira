@@ -1,0 +1,29 @@
+class Kendaraan {
+   private String nomorPlat;
+   private String jenis;
+   private String pemilik;
+
+   public Kendaraan(String var1, String var2, String var3) {
+      this.nomorPlat = var1;
+      this.jenis = var2;
+      this.pemilik = var3;
+   }
+
+   public String getNomorPlat() {
+      return this.nomorPlat;
+   }
+
+   public String getJenis() {
+      return this.jenis;
+   }
+
+   public String getPemilik() {
+      return this.pemilik;
+   }
+
+   public void displayInfo() {
+      System.out.println("Nomor Plat: " + this.nomorPlat);
+      System.out.println("Jenis: " + this.jenis);
+      System.out.println("Pemilik: " + this.pemilik);
+   }
+}
