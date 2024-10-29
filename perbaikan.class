@@ -1,0 +1,17 @@
+class Perbaikan extends Servis {
+   private String deskripsiPerbaikan;
+
+   public Perbaikan(String var1, double var2, String var4) {
+      super(var1, var2);
+      this.deskripsiPerbaikan = var4;
+   }
+
+   public String getDeskripsiPerbaikan() {
+      return this.deskripsiPerbaikan;
+   }
+
+   public void displayInfo() {
+      super.displayInfo();
+      System.out.println("Deskripsi Perbaikan: " + this.deskripsiPerbaikan);
+   }
+}
