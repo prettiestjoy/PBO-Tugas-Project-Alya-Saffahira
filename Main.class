@@ -1,0 +1,82 @@
+import java.util.Scanner;
+
+public class Main {
+   public Main() {
+   }
+
+   public static void main(String[] var0) {
+      Scanner var1 = new Scanner(System.in);
+      Bengkel var2 = new Bengkel();
+
+      int var3;
+      do {
+         System.out.println("\n=== Menu Bengkel ===");
+         System.out.println("1. Tambah Kendaraan");
+         System.out.println("2. Tambah Pelanggan");
+         System.out.println("3. Catat Servis");
+         System.out.println("4. Tampilkan Daftar Kendaraan");
+         System.out.println("5. Tampilkan Riwayat Servis");
+         System.out.println("0. Keluar");
+         System.out.print("Pilih menu: ");
+         var3 = var1.nextInt();
+         var1.nextLine();
+         switch (var3) {
+            case 0:
+               System.out.println("Keluar dari program.");
+               break;
+            case 1:
+               System.out.print("Masukkan nomor plat: ");
+               String var4 = var1.nextLine();
+               System.out.print("Jenis kendaraan (1. Mobil, 2. Motor): ");
+               int var5 = var1.nextInt();
+               var1.nextLine();
+               System.out.print("Masukkan nama pemilik: ");
+               String var6 = var1.nextLine();
+               if (var5 == 1) {
+                  var2.tambahKendaraan(new Mobil(var4, var6));
+               } else if (var5 == 2) {
+                  var2.tambahKendaraan(new Motor(var4, var6));
+               } else {
+                  System.out.println("Jenis kendaraan tidak valid.");
+               }
+               break;
+            case 2:
+               System.out.print("Masukkan nama pelanggan: ");
+               String var7 = var1.nextLine();
+               System.out.print("Masukkan kontak pelanggan: ");
+               String var8 = var1.nextLine();
+               var2.tambahPelanggan(new Pelanggan(var7, var8));
+               break;
+            case 3:
+               System.out.print("Jenis servis (1. Servis Umum, 2. Perbaikan): ");
+               int var9 = var1.nextInt();
+               var1.nextLine();
+               System.out.print("Masukkan nama servis: ");
+               String var10 = var1.nextLine();
+               System.out.print("Masukkan biaya: ");
+               double var11 = var1.nextDouble();
+               var1.nextLine();
+               if (var9 == 1) {
+                  var2.catatServis(new Servis(var10, var11));
+               } else if (var9 == 2) {
+                  System.out.print("Masukkan deskripsi perbaikan: ");
+                  String var13 = var1.nextLine();
+                  var2.catatServis(new Perbaikan(var10, var11, var13));
+               } else {
+                  System.out.println("Jenis servis tidak valid.");
+               }
+               break;
+            case 4:
+               var2.tampilkanKendaraan();
+               break;
+            case 5:
+               var2.tampilkanRiwayatServis();
+               break;
+            default:
+               System.out.println("Pilihan tidak valid.");
+         }
+      } while(var3 != 0);
+
+      var1.close();
+   }
+}
