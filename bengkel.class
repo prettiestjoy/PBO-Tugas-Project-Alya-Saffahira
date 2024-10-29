@@ -1,0 +1,50 @@
+import java.util.ArrayList;
+import java.util.Iterator;
+
+class Bengkel {
+   private ArrayList<Kendaraan> daftarKendaraan = new ArrayList();
+   private ArrayList<Servis> riwayatServis = new ArrayList();
+   private ArrayList<Pelanggan> daftarPelanggan = new ArrayList();
+
+   Bengkel() {
+   }
+
+   public void tambahKendaraan(Kendaraan var1) {
+      this.daftarKendaraan.add(var1);
+      System.out.println("Kendaraan berhasil ditambahkan.");
+   }
+
+   public void tambahPelanggan(Pelanggan var1) {
+      this.daftarPelanggan.add(var1);
+      System.out.println("Pelanggan berhasil ditambahkan.");
+   }
+
+   public void catatServis(Servis var1) {
+      this.riwayatServis.add(var1);
+      System.out.println("Servis berhasil dicatat.");
+   }
+
+   public void tampilkanRiwayatServis() {
+      System.out.println("\n=== Riwayat Servis ===");
+      Iterator var1 = this.riwayatServis.iterator();
+
+      while(var1.hasNext()) {
+         Servis var2 = (Servis)var1.next();
+         var2.displayInfo();
+         System.out.println();
+      }
+
+   }
+
+   public void tampilkanKendaraan() {
+      System.out.println("\n=== Daftar Kendaraan ===");
+      Iterator var1 = this.daftarKendaraan.iterator();
+
+      while(var1.hasNext()) {
+         Kendaraan var2 = (Kendaraan)var1.next();
+         var2.displayInfo();
+         System.out.println();
+      }
+
+   }
+}
