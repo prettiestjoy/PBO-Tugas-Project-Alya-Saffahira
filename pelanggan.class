@@ -1,0 +1,17 @@
+class Pelanggan {
+   private String nama;
+   private String kontak;
+
+   public Pelanggan(String var1, String var2) {
+      this.nama = var1;
+      this.kontak = var2;
+   }
+
+   public String getNama() {
+      return this.nama;
+   }
+
+   public String getKontak() {
+      return this.kontak;
+   }
+}
