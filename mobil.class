@@ -1,0 +1,10 @@
+class Mobil extends Kendaraan {
+   public Mobil(String var1, String var2) {
+      super(var1, "Mobil", var2);
+   }
+
+   public void displayInfo() {
+      System.out.println("=== Informasi Mobil ===");
+      super.displayInfo();
+   }
+}
