@@ -1,0 +1,22 @@
+class Servis {
+   private String jenisServis;
+   private double biaya;
+
+   public Servis(String var1, double var2) {
+      this.jenisServis = var1;
+      this.biaya = var2;
+   }
+
+   public String getJenisServis() {
+      return this.jenisServis;
+   }
+
+   public double getBiaya() {
+      return this.biaya;
+   }
+
+   public void displayInfo() {
+      System.out.println("Jenis Servis: " + this.jenisServis);
+      System.out.println("Biaya: " + this.biaya);
+   }
+}
