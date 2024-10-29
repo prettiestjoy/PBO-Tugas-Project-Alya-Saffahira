@@ -1,0 +1,10 @@
+class Motor extends Kendaraan {
+   public Motor(String var1, String var2) {
+      super(var1, "Motor", var2);
+   }
+
+   public void displayInfo() {
+      System.out.println("=== Informasi Motor ===");
+      super.displayInfo();
+   }
+}
